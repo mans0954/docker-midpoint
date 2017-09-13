@@ -1,0 +1,12 @@
+version: '3'
+services:
+  midpoint:
+    image: evolveum/midpoint
+    container_name: midpoint
+    domainname: docker
+    links:
+      - connid-connector-server:connid-connector-server
+  connid-connector-server:
+    image: mans0954/connid-connector-server
+    container_name: connid-connector-server
+    domainname: docker 
