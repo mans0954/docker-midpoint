@@ -1,0 +1,8 @@
+<connectorHost xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3">
+    <name>ICF Connector server on connid-connector-server:8759</name>
+    <hostname>connid-connector-server</hostname>             <!-- hostname/IP where is remote connector server installed -->
+    <port>8759</port>                       <!-- port where is remote connector server installed -->
+    <sharedSecret>                            <!-- shared secret between midPoint and remote connector server-->
+        <t:clearValue>fibble</t:clearValue>
+    </sharedSecret>      
+</connectorHost>
