@@ -8,3 +8,10 @@ docker-compose up
 * username: administrator
 * password: 5ecr3t
 * Home: /var/opt/midpoint/
+
+# Connector Server Setup
+
+* Go to `Configuration` / `Import Object`
+* Click Browse
+* Select `remote-server.xml`
+* The connector server now appears under `Resources / Connector Hosts`
