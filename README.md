@@ -9,6 +9,15 @@ docker-compose up
 * password: 5ecr3t
 * Home: /var/opt/midpoint/
 
+# CSV file setup
+
+* Go to `Resources`/`List Resources`
+* Click the `Import` icon
+* Select `resource-csv-username.xml`
+* Select `Test CSV:username` in `Resources List`
+* Click `Test Connection`
+* View `Accounts` / `Resource`
+
 # Connector Server Setup
 
 * Go to `Configuration` / `Import Object`
