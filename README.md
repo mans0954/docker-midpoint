@@ -24,3 +24,16 @@ docker-compose up
 * Click Browse
 * Select `remote-server.xml`
 * The connector server now appears under `Resources / Connector Hosts`
+
+# Extracting objects from a Raw Object Export
+
+`extract.xsl` is an XSLT file for extracting XML representations of objects of particular types into individual files.
+
+Create an `ExportedData_ObjectType.xml` file by going to `Configuration` / `Repository Objects`, select the cog and select `Export all Objects`
+
+Run
+
+```
+saxonb-xslt -ext:on -xsl:extract.xsl ExportedData_ObjectType.xml
+```
+
