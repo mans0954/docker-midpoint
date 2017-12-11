@@ -1,2 +1,4 @@
 connectors/*.jar
 schema/*.xsd
+data/*.xml
+out

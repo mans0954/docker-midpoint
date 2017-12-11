@@ -34,6 +34,6 @@ Create an `ExportedData_ObjectType.xml` file by going to `Configuration` / `Repo
 Run
 
 ```
-saxonb-xslt -ext:on -xsl:extract.xsl ExportedData_ObjectType.xml
+saxonb-xslt -ext:on -xsl:extract.xsl data/ExportedData_ObjectType.xml
 ```
 

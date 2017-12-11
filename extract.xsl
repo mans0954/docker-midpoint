@@ -73,7 +73,13 @@
       </objects>
     </xsl:result-document>
 
-
+    <xsl:result-document href="out/resource.xml" method="xml">
+      <objects xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+        xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+        xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3">
+          <xsl:apply-templates select="resource"/>
+      </objects>
+    </xsl:result-document>
 
   </xsl:template>
 
@@ -102,6 +108,10 @@
   </xsl:template>
 
   <xsl:template match="securityPolicy">
+      <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="resource">
       <xsl:copy-of select="."/>
   </xsl:template>
 
