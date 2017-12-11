@@ -11,6 +11,8 @@ services:
       - ${PWD}/midpoint-username.csv:/csv/midpoint-username.csv
       - ${PWD}/connectors:/var/opt/midpoint/icf-connectors/
       - ${PWD}/schema:/var/opt/midpoint/schema/
+    ports:
+      - "8080:8080"
   connid-connector-server:
     image: mans0954/connid-connector-server
     container_name: connid-connector-server
