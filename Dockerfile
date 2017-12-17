@@ -1,4 +1,4 @@
-FROM debian
+FROM tomcat
 ENV JAVA_OPTS="-server -Xms256m -Xmx512m -Dmidpoint.home=/var/opt/midpoint/ -Djavax.net.ssl.trustStore=/var/opt/midpoint/keystore.jceks -Djavax.net.ssl.trustStoreType=jceks"
 
 MAINTAINER info@evolveum.com
@@ -11,15 +11,12 @@ RUN git clone https://github.com/Evolveum/midpoint.git
 
 WORKDIR midpoint
 
-RUN mvn compile
+RUN  mvn clean install -DskipTests=true -P -dist
 
-#RUN wget http://evolveum.com/downloads/midpoint/${version}/midpoint-${version}-dist.zip
+RUN cp gui/admin-gui/target/midpoint.war /usr/local/tomcat/webapps
 
-#RUN echo 'Extracting midPoint archive...' \
-#&& tar xjf midpoint-${version}-dist.tar.bz2 \
-#&& rm -f midpoint-${version}-dist.tar.bz2
+WORKDIR /
 
-#RUN cp midpoint-${version}/war/midpoint.war /usr/local/tomcat/webapps \
-#&& rm -rf midpoint-${version}
+RUN rm -rf ~/.m2 midpoint
 
-#CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
